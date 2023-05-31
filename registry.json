@@ -1,0 +1,25 @@
+{
+  "flakes": [
+    {
+      "from": {
+        "id": "node-16-dev",
+        "type": "indirect"
+      },
+      "to": {
+        "path": "/Users/corne/Nix/node-16-dev",
+        "type": "path"
+      }
+    },
+    {
+      "from": {
+        "id": "node-14-dev",
+        "type": "indirect"
+      },
+      "to": {
+        "path": "/Users/corne/Nix/node-14-dev",
+        "type": "path"
+      }
+    }
+  ],
+  "version": 2
+}
