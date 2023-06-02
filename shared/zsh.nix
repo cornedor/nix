@@ -10,7 +10,7 @@
     };
     oh-my-zsh = {
       enable = true;
-      theme = "jispwoso";
+      # theme = "jispwoso";
       plugins = [ "git" "copyfile" "jira" ];
     };
     dirHashes = {

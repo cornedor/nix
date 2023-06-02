@@ -14,9 +14,20 @@
 
     # Other sources
     comma.url = "github:nix-community/comma";
+
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, darwin, nixpkgs, stablepkgs, home-manager, ... }@inputs:
+  outputs = {
+    self,
+    darwin,
+    nixpkgs,
+    stablepkgs,
+    home-manager,
+    nix-vscode-extensions,
+    ...
+  }@inputs:
   let 
 
     inherit (darwin.lib) darwinSystem;
@@ -25,17 +36,22 @@
     # Configuration for `nixpkgs`
     nixpkgsConfig = {
       config = { allowUnfree = true; };
-      overlays = attrValues self.overlays ++ singleton (
+      overlays = attrValues self.overlays ++ [
+        nix-vscode-extensions.overlays.default
+      ] ++ singleton (
         # Sub in x86 version of packages that don't build on Apple Silicon yet
         final: prev: (optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
           inherit (final.pkgs-x86);
+          # Add packages here that are not available in the aarch64 repo, e.g.
+          # clang;
         })
-      );# ++ singleton (
-      #   final: prev: (optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
-      #     inherit (final.overlayStable)
-      #       vscode-with-extensions;
-      #   })
-      # );
+      ) ++ singleton (
+        final: prev: (optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
+          inherit (final.overlayStable);
+          # Add packages here that should be installed from stable
+          # vscode-with-extensions;
+        })
+      );
     }; 
   in
   {
@@ -44,6 +60,9 @@
     darwinConfigurations = {
       corne = darwinSystem {
         system = "aarch64-darwin";
+        specialArgs = {
+          inherit inputs;
+        };
         modules = attrValues self.darwinModules ++ [ 
           # Main `nix-darwin` config
           ./configuration.nix

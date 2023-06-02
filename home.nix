@@ -15,6 +15,8 @@
   programs.htop.enable = true;
   programs.htop.settings.show_program_path = true;
 
+  programs.starship.enable = true;
+
   imports = [
     ./shared/vscode.nix
     ./shared/git.nix
@@ -28,10 +30,10 @@
     wget
     htop
     neovim
-    gnupg
     git
     bit
     openssl
+    gnupg
     ffmpeg
     irssi
     jq
