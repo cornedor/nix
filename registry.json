@@ -19,6 +19,16 @@
         "path": "/Users/corne/Nix/node-14-dev",
         "type": "path"
       }
+    },
+    {
+      "from": {
+        "id": "node-18-dev",
+        "type": "indirect"
+      },
+      "to": {
+        "path": "/Home/corne/.config/nix/flakes/node-18-dev",
+        "type": "path"
+      }
     }
   ],
   "version": 2
