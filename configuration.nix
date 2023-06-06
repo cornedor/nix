@@ -8,6 +8,9 @@
   nix.settings.trusted-users = [
     "@admin"
   ];
+  nixpkgs.config.permittedInsecurePackages = [
+    "nodejs-14.21.3"
+  ];
   nix.configureBuildUsers = true;
 
   users.users = {
