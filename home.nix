@@ -15,8 +15,6 @@
   programs.htop.enable = true;
   programs.htop.settings.show_program_path = true;
 
-  programs.starship.enable = true;
-
   imports = [
     ./shared/vscode.nix
     ./shared/git.nix
@@ -36,6 +34,7 @@
     gnupg
     ffmpeg
     irssi
+    yaml2json
     jq
     gnused
     thefuck

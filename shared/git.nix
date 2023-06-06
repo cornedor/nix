@@ -15,12 +15,27 @@
       key = "E35CCCA771A37255A87F21B1E01A9819F86CE169";
       signByDefault = true;
     };
+    ignores = [
+      ".DS_Store"
+      ".envrc"
+    ];
+    
 
     difftastic.enable = true;
 
     includes = [
       {
         condition = "gitdir:~/Development";
+        contents = {
+          user = {
+            email = "cdorrestijn@emico.nl";
+            name = "Corné Dorrestijn";
+          };
+
+        };
+      }
+      {
+        condition = "gitdir:~/Branches";
         contents = {
           user = {
             email = "cdorrestijn@emico.nl";

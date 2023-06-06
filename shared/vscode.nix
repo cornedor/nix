@@ -15,6 +15,7 @@ let
     yoavbls.pretty-ts-errors
     rvest.vs-code-prettier-eslint
     xdebug.php-debug
+    jock.svg
   ];
   vscodeWithExtensions = pkgs.vscode-with-extensions.override {
     # vscode = pkgs.vscodium;

@@ -10,7 +10,6 @@
     };
     oh-my-zsh = {
       enable = true;
-      # theme = "jispwoso";
       plugins = [ "git" "copyfile" "jira" ];
     };
     dirHashes = {
@@ -32,5 +31,34 @@
 
   programs.fzf = {
     enable = true;
+  };
+
+  programs.starship.enable = true;
+  programs.starship.settings = {
+    gcloud.disabled = true;
+    custom.ddev = {
+      detect_folders = [".ddev"];
+      command = "cat .ddev/config.yaml | yaml2json | jq -r .php_version";
+      when = " test \"$output\" ";
+      symbol = " ";
+      style = "green bold";
+    };
+    custom.react = {
+      detect_files = ["package.json"];
+      detect_folders = ["node_modules"];
+      detect_extensions = ["tsx"];
+      command = "jq -r .version node_modules/react/package.json || jq -r .dependencies.react package.json";
+      symbol = "󰜈 ";
+      style = "bold yellow";
+      format = ''via [$symbol($output)]($style) '';
+
+    };
+    custom.nextjs = {
+      detect_files = ["next.config.js"];
+      command = "jq -r .version node_modules/next/package.json || jq -r .dependencies.next package.json";
+      symbol = "󰇂 ";
+      style = "bold light-blue";
+      format = ''via [$symbol($output)]($style) '';
+    };
   };
 }
