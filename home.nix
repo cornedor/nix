@@ -76,7 +76,7 @@
     nil
     # cachix # adding/managing alternative binary caches hosted by Cachix
     nodePackages.node2nix
-    # comma
+    comma
   ] ++ lib.optionals stdenv.isDarwin [
     m-cli # useful macOS CLI commands
   ];

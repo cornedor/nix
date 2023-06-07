@@ -53,15 +53,37 @@
   #  ];
 
   # Keyboard
-  system.keyboard.enableKeyMapping = true;
-  system.keyboard.remapCapsLockToEscape = true;
-  system.defaults.NSGlobalDomain.KeyRepeat = 1;
-  system.defaults.NSGlobalDomain.NSAutomaticCapitalizationEnabled = false;
-  system.defaults.NSGlobalDomain.NSAutomaticSpellingCorrectionEnabled = false;
-  system.defaults.NSGlobalDomain.NSNavPanelExpandedStateForSaveMode = true;
-  system.defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false;
-  system.defaults.NSGlobalDomain.AppleShowAllExtensions = true;
-  system.defaults.NSGlobalDomain.AppleKeyboardUIMode = 3; # Navigate trough all UI elements using keyboard
+  system.keyboard = {
+    enableKeyMapping = true;
+    remapCapsLockToEscape = true;
+  };
+
+  system.defaults = {
+    screencapture.location = "~/Screenshots";
+
+    dock."mru-spaces" = false;
+
+    finder = {
+      AppleShowAllExtensions = true;
+      FXEnableExtensionChangeWarning = false;
+      FXPreferredViewStyle = "Nlsv";
+      _FXShowPosixPathInTitle = false;
+      # _FXSortFoldersFirst = true;
+      FXDefaultSearchScope = "SCcf";
+      ShowPathbar = true;
+      ShowStatusBar = true;
+    };
+
+    NSGlobalDomain = {
+      KeyRepeat = 1;
+      NSAutomaticCapitalizationEnabled = false;
+      NSAutomaticSpellingCorrectionEnabled = false;
+      NSNavPanelExpandedStateForSaveMode = true;
+      ApplePressAndHoldEnabled = false;
+      AppleShowAllExtensions = true;
+      AppleKeyboardUIMode = 3; # Navigate trough all UI elements using keyboard
+    };
+  };
 
   # Add ability to used TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;

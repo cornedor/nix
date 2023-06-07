@@ -9,11 +9,13 @@
     # Environment/system management
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Other sources
     comma.url = "github:nix-community/comma";
+    comma.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
@@ -96,9 +98,6 @@
             inherit (nixpkgsConfig) config;
           };
         };
-        comma = final: prev: {
-          comma = import inputs.comma { inherit (prev) pkgs; };
-        };  
       };
 
     # My `nix-darwin` modules that are pending upstream, or patched versions waiting on upstream

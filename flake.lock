@@ -4,7 +4,9 @@
       "inputs": {
         "flake-compat": "flake-compat",
         "naersk": "naersk",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "utils": "utils"
       },
       "locked": {
@@ -160,22 +162,6 @@
       "locked": {
         "lastModified": 1686058679,
         "narHash": "sha256-TQ4IeSgKFDJb0uMaL89ujyEYW6Pppbk+I+UShH4DwXY=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "6afc04d14fd5de5c03645e65ef227c2983d85d2a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1686058679,
-        "narHash": "sha256-TQ4IeSgKFDJb0uMaL89ujyEYW6Pppbk+I+UShH4DwXY=",
         "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "6afc04d14fd5de5c03645e65ef227c2983d85d2a",
@@ -194,7 +180,7 @@
         "darwin": "darwin",
         "home-manager": "home-manager",
         "nix-vscode-extensions": "nix-vscode-extensions",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs",
         "stablepkgs": "stablepkgs"
       }
     },
