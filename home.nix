@@ -40,6 +40,7 @@
     thefuck
     dig
     graalvm19-ce
+    obsidian
 
     # Virtualisation
     colima
