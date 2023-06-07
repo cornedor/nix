@@ -75,8 +75,8 @@
     nixpkgs-fmt
     nil
     # cachix # adding/managing alternative binary caches hosted by Cachix
-    comma # run software from without installing it
     nodePackages.node2nix
+    # comma
   ] ++ lib.optionals stdenv.isDarwin [
     m-cli # useful macOS CLI commands
   ];

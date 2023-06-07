@@ -1,5 +1,5 @@
 {
-  description = "Node 18 development environment";
+  description = "Node 14 development environment";
 
   # Flake inputs
   inputs = {

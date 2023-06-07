@@ -26,6 +26,7 @@
     stablepkgs,
     home-manager,
     nix-vscode-extensions,
+    comma,
     ...
   }@inputs:
   let 
@@ -38,6 +39,7 @@
       config = { allowUnfree = true; };
       overlays = attrValues self.overlays ++ [
         nix-vscode-extensions.overlays.default
+        comma.overlays.default
       ] ++ singleton (
         # Sub in x86 version of packages that don't build on Apple Silicon yet
         final: prev: (optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
@@ -94,6 +96,9 @@
             inherit (nixpkgsConfig) config;
           };
         };
+        comma = final: prev: {
+          comma = import inputs.comma { inherit (prev) pkgs; };
+        };  
       };
 
     # My `nix-darwin` modules that are pending upstream, or patched versions waiting on upstream
