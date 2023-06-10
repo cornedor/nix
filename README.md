@@ -26,3 +26,9 @@ sudo nixos-rebuild switch --flake .
 ```
 nix flake update
 ```
+
+## TODO
+
+- [ ] Add vscode configuration
+- [ ] Add vim configuration
+- [ ] Move GPU passtrough config to this repo
