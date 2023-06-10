@@ -37,7 +37,6 @@
       graalvm19-ce
 
       obsidian
-      blender
       vlc
       prismlauncher
 
@@ -91,6 +90,7 @@
       barrier
       libreoffice
       firefox
+      blender # Blender is currently broken on darwin
     ];
 
   home.sessionPath = ["$HOME/.local/bin"];
