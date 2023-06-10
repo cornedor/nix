@@ -69,7 +69,7 @@
         };
         modules = attrValues self.darwinModules ++ [ 
           # Main `nix-darwin` config
-          ./configuration.nix
+          ./machines/macbook/configuration.nix
           # `home-manager` module
           home-manager.darwinModules.home-manager
           {
@@ -77,7 +77,23 @@
             # `home-manager` config
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.corne = import ./home.nix;
+            home-manager.users.corne = import ./users/corne.nix;
+          }
+        ];
+      };
+    };
+
+    nixosConfigurations = {
+      nini = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./machines/nini/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            nixpkgs = nixpkgsConfig;
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.corne = import ./users/corne.nix;
           }
         ];
       };

@@ -16,9 +16,9 @@
   programs.htop.settings.show_program_path = true;
 
   imports = [
-    ./shared/vscode.nix
-    ./shared/git.nix
-    ./shared/zsh.nix
+    ../shared/vscode.nix
+    ../shared/git.nix
+    ../shared/zsh.nix
   ];
 
   home.packages = with pkgs; [
@@ -43,7 +43,6 @@
     obsidian
 
     # Virtualisation
-    colima
     docker
     openssh
 
@@ -78,8 +77,12 @@
     # cachix # adding/managing alternative binary caches hosted by Cachix
     nodePackages.node2nix
     comma
+
   ] ++ lib.optionals stdenv.isDarwin [
     m-cli # useful macOS CLI commands
+    colima
+  ] ++ lib.optionals stdenv.isLinux [
+    openmw
   ];
 
   home.sessionPath = [ "$HOME/.local/bin" ];
