@@ -23,6 +23,7 @@
   boot.kernelParams = ["iommu=pt"];
   boot.kernelModules = ["kvm-amd" "vfio-pci"];
   boot.supportedFilesystems = ["ntfs"];
+  boot.plymouth.enable = true;
 
   fileSystems."/var/mnt/data" = {
     device = "/dev/sda2";
