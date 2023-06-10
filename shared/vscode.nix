@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   marketplace-extensions = with pkgs.vscode-marketplace; [
     codestream.codestream
     ms-playwright.playwright
@@ -19,28 +18,28 @@ let
   ];
   vscodeWithExtensions = pkgs.vscode-with-extensions.override {
     # vscode = pkgs.vscodium;
-    vscodeExtensions = with pkgs.vscode-extensions; [
-      denoland.vscode-deno
-      jnoortheen.nix-ide
-      esbenp.prettier-vscode
-      dbaeumer.vscode-eslint
-      ms-azuretools.vscode-docker
-      ms-vscode-remote.remote-ssh
-      ms-toolsai.jupyter
-      ms-python.python
-      bmewburn.vscode-intelephense-client
-      eamodio.gitlens
-      chenglou92.rescript-vscode
-      redhat.vscode-yaml
-      firefox-devtools.vscode-firefox-debug
-      vscode-icons-team.vscode-icons
-      editorconfig.editorconfig
-      mikestead.dotenv
-      arrterian.nix-env-selector
-    ]
-    ++ marketplace-extensions;
+    vscodeExtensions = with pkgs.vscode-extensions;
+      [
+        denoland.vscode-deno
+        jnoortheen.nix-ide
+        esbenp.prettier-vscode
+        dbaeumer.vscode-eslint
+        ms-azuretools.vscode-docker
+        ms-vscode-remote.remote-ssh
+        ms-toolsai.jupyter
+        ms-python.python
+        bmewburn.vscode-intelephense-client
+        eamodio.gitlens
+        chenglou92.rescript-vscode
+        redhat.vscode-yaml
+        firefox-devtools.vscode-firefox-debug
+        vscode-icons-team.vscode-icons
+        editorconfig.editorconfig
+        mikestead.dotenv
+        arrterian.nix-env-selector
+      ]
+      ++ marketplace-extensions;
   };
-in
-{
-  home.packages = [ vscodeWithExtensions ];
+in {
+  home.packages = [vscodeWithExtensions];
 }

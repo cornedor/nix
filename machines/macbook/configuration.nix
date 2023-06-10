@@ -1,4 +1,8 @@
-{ pkgs, lib, ... }: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   nix.settings.substituters = [
     "https://cache.nixos.org/"
   ];
@@ -18,12 +22,14 @@
 
   # Enable experimental nix command and flakes
   # nix.package = pkgs.nixUnstable;
-  nix.extraOptions = ''
-    auto-optimise-store = false
-    experimental-features = nix-command flakes
-  '' + lib.optionalString (pkgs.system == "aarch64-darwin") ''
-    extra-platforms = x86_64-darwin aarch64-darwin
-  '';
+  nix.extraOptions =
+    ''
+      auto-optimise-store = false
+      experimental-features = nix-command flakes
+    ''
+    + lib.optionalString (pkgs.system == "aarch64-darwin") ''
+      extra-platforms = x86_64-darwin aarch64-darwin
+    '';
 
   # Create /etc/bashrc that loads the nix-darwin environment.
   # ZSH is enabled in home
@@ -87,5 +93,4 @@
 
   # Add ability to used TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
-
 }

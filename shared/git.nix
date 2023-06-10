@@ -1,7 +1,11 @@
-{ pkgs, config, ... }: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   programs.git = {
     enable = true;
-    userName  = "Corné Dorrestijn";
+    userName = "Corné Dorrestijn";
     userEmail = "contact@corne.info";
     extraConfig = {
       core = {
@@ -19,7 +23,6 @@
       ".DS_Store"
       ".envrc"
     ];
-    
 
     difftastic.enable = true;
 
@@ -31,7 +34,6 @@
             email = "cdorrestijn@emico.nl";
             name = "Corné Dorrestijn";
           };
-
         };
       }
       {
@@ -41,7 +43,6 @@
             email = "cdorrestijn@emico.nl";
             name = "Corné Dorrestijn";
           };
-
         };
       }
       {

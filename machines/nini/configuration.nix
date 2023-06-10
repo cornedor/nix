@@ -1,33 +1,34 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   nix = {
     package = pkgs.nixUnstable;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
   };
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = [ "iommu=pt" ];
-  boot.kernelModules = [ "kvm-amd" "vfio-pci" ];
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.kernelParams = ["iommu=pt"];
+  boot.kernelModules = ["kvm-amd" "vfio-pci"];
+  boot.supportedFilesystems = ["ntfs"];
 
-  fileSystems."/var/mnt/data" =
-    {
-      device = "/dev/sda2";
-      fsType = "ntfs";
-      options = [ "rw" "uid=1000" "big_writes" ];
-    };
+  fileSystems."/var/mnt/data" = {
+    device = "/dev/sda2";
+    fsType = "ntfs";
+    options = ["rw" "uid=1000" "big_writes"];
+  };
 
   networking.hostName = "nini"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -65,10 +66,9 @@
     layout = "us,us";
     xkbOptions = "caps:swapescape,lv3:ralt_switch";
     xkbVariant = "altgr-intl";
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = ["nvidia"];
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
-    desktopManager.pantheon.enable = true;
   };
   hardware.nvidia.modesetting.enable = true;
 
@@ -97,7 +97,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.corne = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" "docker" "adbusers" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "libvirtd" "docker" "adbusers"]; # Enable ‘sudo’ for the user.
   };
 
   security.sudo.wheelNeedsPassword = false;
@@ -126,6 +126,8 @@
     podman-compose
   ];
 
+  programs.dconf.enable = true;
+
   programs.steam.enable = true;
 
   programs.zsh.enable = true;
@@ -134,7 +136,7 @@
   fonts.fonts = with pkgs; [
     ibm-plex
     (nerdfonts.override {
-      fonts = [ "FiraCode" ];
+      fonts = ["FiraCode"];
     })
   ];
 
@@ -169,7 +171,7 @@
   };
 
   systemd.services.libvirtd = {
-    path = with pkgs; [ libvirt procps utillinux doas ];
+    path = with pkgs; [libvirt procps utillinux doas];
   };
 
   virtualisation.docker.enable = true;
@@ -184,7 +186,6 @@
 
   location.latitude = 52.0;
   location.longitude = 5.5;
-
   services.redshift = {
     enable = true;
     brightness = {
@@ -200,8 +201,8 @@
   services.tailscale.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 57220 25565 ];
-  networking.firewall.allowedUDPPorts = [ 57220 ];
+  networking.firewall.allowedTCPPorts = [57220 25565];
+  networking.firewall.allowedUDPPorts = [57220];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -212,5 +213,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-
 }

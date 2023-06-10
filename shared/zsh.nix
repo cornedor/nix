@@ -1,4 +1,8 @@
-{ pkgs, config, ... }: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -10,7 +14,7 @@
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "copyfile" "jira" ];
+      plugins = ["git" "copyfile" "jira"];
     };
     dirHashes = {
       nix = "$HOME/.config/nix";
@@ -21,7 +25,7 @@
   programs.exa = {
     enable = true;
     enableAliases = true;
-    extraOptions  =[
+    extraOptions = [
       "--group-directories-first"
       "--header"
     ];
@@ -31,6 +35,13 @@
 
   programs.fzf = {
     enable = true;
+  };
+
+  # Direnv, load and unload environment variables depending on the current directory.
+  # https://direnv.net
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 
   programs.starship.enable = true;
@@ -51,7 +62,6 @@
       symbol = "󰜈 ";
       style = "bold yellow";
       format = ''via [$symbol($output)]($style) '';
-
     };
     custom.nextjs = {
       detect_files = ["next.config.js"];
