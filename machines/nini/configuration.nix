@@ -134,25 +134,6 @@
     # Virtualisation
     virt-manager
     podman-compose
-
-    # Development
-    haxe
-    php81Packages.composer
-    php
-    python
-    pkg-config
-    lz4
-    mono
-    gcc
-    go
-    elixir
-    erlang
-
-    # Gaming
-    protontricks
-    dosbox
-    openjdk
-
   ];
 
   programs.steam.enable = true;
