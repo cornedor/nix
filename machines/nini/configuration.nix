@@ -68,6 +68,7 @@
     videoDrivers = [ "nvidia" ];
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
+    desktopManager.pantheon.enable = true;
   };
   hardware.nvidia.modesetting.enable = true;
 
