@@ -24,6 +24,7 @@
   home.packages = with pkgs; [
     # Some basics
     coreutils
+    killall
     curl
     wget
     htop
@@ -34,13 +35,17 @@
     gnupg
     ffmpeg
     irssi
+    screen
     yaml2json
     jq
     gnused
     thefuck
     dig
     graalvm19-ce
+
     obsidian
+    blender
+    vlc
 
     # Virtualisation
     docker
@@ -83,6 +88,11 @@
     colima
   ] ++ lib.optionals stdenv.isLinux [
     openmw
+    tailscale
+    mullvad-vpn
+    transmission-gtk
+    barrier
+    libreoffice
   ];
 
   home.sessionPath = [ "$HOME/.local/bin" ];

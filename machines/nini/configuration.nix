@@ -107,21 +107,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    killall
     pciutils
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    screen
     inotify-tools
-    ffmpeg
-    blender
-
-    tailscale
-    mullvad-vpn
-    transmission-gtk
-    barrier
-    libreoffice
-    vlc
 
     ## Gnome/theming
     gnome.gnome-tweaks
@@ -157,7 +144,8 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  services.openssh.forwardX11 = true;
+  services.openssh.settings.X11Forwarding = true;
+  services.openssh.openFirewall = true;
 
   virtualisation.libvirtd = {
     enable = true;
