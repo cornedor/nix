@@ -19,6 +19,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelParams = [ "iommu=pt" ];
+  boot.kernelModules = [ "kvm-amd" "vfio-pci" ];
   boot.supportedFilesystems = [ "ntfs" ];
 
   fileSystems."/var/mnt/data" =
@@ -117,6 +118,7 @@
     gnomeExtensions.removable-drive-menu
     arc-theme
     ibm-plex
+    nerdfonts
 
     # Virtualisation
     virt-manager
@@ -130,6 +132,9 @@
 
   fonts.fonts = with pkgs; [
     ibm-plex
+    (nerdfonts.override {
+      fonts = [ "FiraCode" ];
+    })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -158,6 +163,7 @@
       swtpm = {
         enable = true;
       };
+      runAsRoot = true;
     };
   };
 
@@ -204,6 +210,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "23.05"; # Did you read the comment?
 
 }

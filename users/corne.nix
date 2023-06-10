@@ -87,12 +87,15 @@
     m-cli # useful macOS CLI commands
     colima
   ] ++ lib.optionals stdenv.isLinux [
+    _1password
+    _1password-gui
     openmw
     tailscale
     mullvad-vpn
     transmission-gtk
     barrier
     libreoffice
+    firefox
   ];
 
   home.sessionPath = [ "$HOME/.local/bin" ];
