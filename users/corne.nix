@@ -34,11 +34,9 @@
       gnused
       thefuck
       dig
-      graalvm19-ce
+      # graalvm19-ce
 
       obsidian
-      vlc
-      prismlauncher
 
       # Virtualisation
       docker
@@ -68,6 +66,7 @@
       clang
       opam
       micromamba
+      jdk17
 
       # Useful nix related tools
       nixpkgs-fmt
@@ -89,8 +88,11 @@
       transmission-gtk
       barrier
       libreoffice
+       # Currently broken or has quirks in MacOS
       firefox
-      blender # Blender is currently broken on darwin
+      blender
+      vlc
+      prismlauncher
     ];
 
   home.sessionPath = ["$HOME/.local/bin"];

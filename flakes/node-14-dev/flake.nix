@@ -16,11 +16,16 @@
     (system: let
       pkgs = import nixpkgs {
         inherit system;
+        overlays = [
+          (self: super: {
+            nodejs = super.nodejs-14_x;
+          })
+        ];
       };
     in {
       devShells.default = pkgs.mkShell {
         buildInputs = [
-          pkgs.nodejs-14_x
+          pkgs.nodejs
           pkgs.nodePackages.yarn
           pkgs.nodePackages.typescript
           pkgs.nodePackages.typescript-language-server

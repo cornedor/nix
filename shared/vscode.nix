@@ -15,6 +15,14 @@
     rvest.vs-code-prettier-eslint
     xdebug.php-debug
     jock.svg
+
+    # Java
+    redhat.java
+    vscjava.vscode-java-debug
+    vscjava.vscode-java-pack
+    vscjava.vscode-maven
+    vscjava.vscode-java-dependency
+    vscjava.vscode-gradle
   ];
   vscodeWithExtensions = pkgs.vscode-with-extensions.override {
     # vscode = pkgs.vscodium;
