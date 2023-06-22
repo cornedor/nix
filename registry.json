@@ -19,6 +19,17 @@
         "path": "/Users/corne/.config/nix/flakes/node-14-dev",
         "type": "path"
       }
+    },
+    {
+      "from": {
+        "id": "microvm",
+        "type": "indirect"
+      },
+      "to": {
+        "owner": "astro",
+        "repo": "microvm.nix",
+        "type": "github"
+      }
     }
   ],
   "version": 2

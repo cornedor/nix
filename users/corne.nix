@@ -88,7 +88,7 @@
       transmission-gtk
       barrier
       libreoffice
-       # Currently broken or has quirks in MacOS
+      # Currently broken or has quirks in MacOS
       firefox
       blender
       vlc
