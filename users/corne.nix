@@ -101,5 +101,7 @@
   home.shellAliases.gitappend = "git commit --amend --no-edit && git push --force-with-lease";
   home.shellAliases.vim = "nvim";
 
+  # manual.manpages.enable = false;
+
   # home.file.".envrc".source
 }

@@ -7,7 +7,9 @@
     enable = true;
     enableCompletion = true;
     enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting = {
+      enable = true;
+    };
     history = {
       ignoreSpace = true;
       save = 20000;
