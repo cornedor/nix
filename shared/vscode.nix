@@ -15,8 +15,8 @@
     rvest.vs-code-prettier-eslint
     xdebug.php-debug
     jock.svg
-    danielsanmedium.dscodegpt
     figma.figma-vscode-extension
+    mxsdev.typescript-explorer
 
     # Java
     redhat.java
