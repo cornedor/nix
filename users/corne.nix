@@ -11,6 +11,7 @@
     ../shared/git.nix
     ../shared/zsh.nix
     ../shared/htop.nix
+    ../shared/alacritty.nix
   ];
 
   home.packages = with pkgs;
