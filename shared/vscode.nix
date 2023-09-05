@@ -17,6 +17,9 @@
     jock.svg
     figma.figma-vscode-extension
     mxsdev.typescript-explorer
+    bradlc.vscode-tailwindcss
+    stivo.tailwind-fold
+    astro-build.astro-vscode
 
     # Java
     redhat.java

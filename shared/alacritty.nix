@@ -1,5 +1,6 @@
 { ... }: {
-  home.file."/.config/alacritty/solarized-light.theme.yml".source = "./dotfiles/alacritty/solarized-light.theme.yml";
+  home.file."/.config/alacritty/solarized-light.theme.yml".source =
+    ./dotfiles/alacritty/solarized-light.theme.yml;
   programs.alacritty = {
     enable = true;
     settings = {
