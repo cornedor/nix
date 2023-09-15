@@ -45,6 +45,7 @@
 
       ## JavaScript Development
       nodejs
+      bun
       # nodejs-12_x
       yarn
       nodePackages.eslint

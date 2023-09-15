@@ -20,6 +20,8 @@
     bradlc.vscode-tailwindcss
     stivo.tailwind-fold
     astro-build.astro-vscode
+    oven.bun-vscode
+    formulahendry.auto-rename-tag
 
     # Java
     redhat.java
