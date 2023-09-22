@@ -52,6 +52,7 @@
       nodePackages.prettier
       nodePackages.create-react-app
       deno
+      
 
       ## PHP Development
       mysql
@@ -64,8 +65,9 @@
       # Other languages
       go
       haxe
+      clang_16
       # hashlink
-      clang
+      # clang
       opam
       micromamba
       jdk17

@@ -22,6 +22,7 @@
     astro-build.astro-vscode
     oven.bun-vscode
     formulahendry.auto-rename-tag
+    ziglang.vscode-zig
 
     # Java
     redhat.java
