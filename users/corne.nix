@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  nixvim,
   ...
 }: {
   home.stateVersion = "23.05";
@@ -14,90 +15,94 @@
     ../shared/alacritty.nix
   ];
 
-  home.packages = with pkgs;
-    [
-      # Some basics
-      coreutils
-      killall
-      curl
-      wget
-      htop
-      neovim
-      git
-      bit
-      openssl
-      gnupg
-      ffmpeg
-      irssi
-      screen
-      yaml2json
-      jq
-      gnused
-      thefuck
-      dig
-      # graalvm19-ce
+  home.packages =
+    [nixvim.packages.${pkgs.system}.default]
+    ++ (with pkgs;
+      [
+        # Some basics
+        coreutils
+        killall
+        curl
+        wget
+        htop
+        ripgrep
+        # neovim
+        git
+        bit
+        openssl
+        gnupg
+        ffmpeg
+        irssi
+        screen
+        yaml2json
+        jq
+        gnused
+        thefuck
+        dig
+        # graalvm19-ce
 
-      obsidian
+        obsidian
 
-      # Virtualisation
-      docker
-      openssh
+        # Virtualisation
+        docker
+        openssh
 
-      ## JavaScript Development
-      nodejs
-      bun
-      # nodejs-12_x
-      yarn
-      nodePackages.eslint
-      nodePackages.prettier
-      nodePackages.create-react-app
-      deno
-      
+        ## JavaScript Development
+        nodejs
+        bun
+        # nodejs-12_x
+        yarn
+        nodePackages.eslint
+        nodePackages.prettier
+        nodePackages.create-react-app
+        deno
 
-      ## PHP Development
-      mysql
-      php82Packages.composer
-      php82
-      mkcert
-      nss
-      nssTools
-      caddy
-      # Other languages
-      go
-      haxe
-      clang_16
-      # hashlink
-      # clang
-      opam
-      micromamba
-      jdk17
+        ## PHP Development
+        mysql
+        php82Packages.composer
+        php82
+        mkcert
+        nss
+        nssTools
+        caddy
+        # Other languages
+        go
+        haxe
+        clang_16
+        # hashlink
+        # clang
+        opam
+        micromamba
+        jdk17
 
-      # Useful nix related tools
-      nixpkgs-fmt
-      nil
-      # cachix # adding/managing alternative binary caches hosted by Cachix
-      nodePackages.node2nix
-      comma
-    ]
-    ++ lib.optionals stdenv.isDarwin [
-      m-cli # useful macOS CLI commands
-      colima
-    ]
-    ++ lib.optionals stdenv.isLinux [
-      _1password
-      _1password-gui
-      openmw
-      tailscale
-      mullvad-vpn
-      transmission-gtk
-      barrier
-      libreoffice
-      # Currently broken or has quirks in MacOS
-      firefox
-      blender
-      vlc
-      prismlauncher
-    ];
+        # Useful nix related tools
+        nixpkgs-fmt
+        nil
+        # cachix # adding/managing alternative binary caches hosted by Cachix
+        nodePackages.node2nix
+        nodePackages.typescript-language-server
+        comma
+      ]
+      ++ lib.optionals stdenv.isDarwin [
+        m-cli # useful macOS CLI commands
+        lima
+        colima
+      ]
+      ++ lib.optionals stdenv.isLinux [
+        _1password
+        _1password-gui
+        openmw
+        tailscale
+        mullvad-vpn
+        transmission-gtk
+        barrier
+        libreoffice
+        # Currently broken or has quirks in MacOS
+        firefox
+        blender
+        vlc
+        prismlauncher
+      ]);
 
   home.sessionPath = ["$HOME/.local/bin"];
 
