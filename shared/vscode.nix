@@ -23,6 +23,7 @@
     oven.bun-vscode
     formulahendry.auto-rename-tag
     ziglang.vscode-zig
+    jakebecker.elixir-ls
 
     # Java
     redhat.java

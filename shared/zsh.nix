@@ -21,6 +21,7 @@
     dirHashes = {
       nix = "$HOME/.config/nix";
       dev = "$HOME/Development";
+      vim = "$HOME/.config/nvim";
     };
   };
 

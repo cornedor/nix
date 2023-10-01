@@ -19,10 +19,6 @@
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
-
-    # nixvim.url = "github:nix-community/nixvim";
-    # nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim.url = "./flakes/vim";
   };
 
   outputs = {
@@ -33,7 +29,6 @@
     home-manager,
     nix-vscode-extensions,
     comma,
-    nixvim,
     ...
   } @ inputs: let
     inherit (darwin.lib) darwinSystem;
@@ -87,7 +82,7 @@
               home-manager.useUserPackages = true;
               home-manager.users.corne = import ./users/corne.nix;
               home-manager.extraSpecialArgs = {
-                nixvim = nixvim;
+                # nixvim = nixvim;
               };
             }
           ];
@@ -98,7 +93,7 @@
       nini = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
-          nixvim = nixvim;
+          # nixvim = nixvim;
         };
         modules = [
           ./machines/nini/configuration.nix

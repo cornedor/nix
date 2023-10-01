@@ -13,7 +13,7 @@
     "@admin"
   ];
   nix.configureBuildUsers = true;
-  nix.settings.sandbox = false;
+  nix.settings.sandbox = true;
 
   users.users = {
     corne = {
