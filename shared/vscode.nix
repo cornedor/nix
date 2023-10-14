@@ -22,8 +22,9 @@
     astro-build.astro-vscode
     oven.bun-vscode
     formulahendry.auto-rename-tag
-    ziglang.vscode-zig
+    # ziglang.vscode-zig
     jakebecker.elixir-ls
+    rhaiscript.vscode-rhai
 
     # Java
     redhat.java

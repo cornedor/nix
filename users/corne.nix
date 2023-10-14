@@ -24,6 +24,7 @@
       htop
       ripgrep
       neovim
+      tmux
       git
       bit
       openssl
@@ -36,6 +37,11 @@
       gnused
       thefuck
       dig
+      fd
+
+      # Replace MacOS packages
+      gnumake
+
       # graalvm19-ce
 
       obsidian
@@ -73,6 +79,10 @@
       micromamba
       jdk17
       erlang_26
+      python311
+      python311Packages.pip
+      cargo
+      rustc
 
       # Useful nix related tools
       nixpkgs-fmt
