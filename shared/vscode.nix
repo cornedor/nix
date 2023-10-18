@@ -25,6 +25,8 @@
     # ziglang.vscode-zig
     jakebecker.elixir-ls
     rhaiscript.vscode-rhai
+    murloccra4ler.leap
+    vscodevim.vim
 
     # Java
     redhat.java
