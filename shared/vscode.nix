@@ -46,8 +46,8 @@
         dbaeumer.vscode-eslint
         ms-azuretools.vscode-docker
         ms-vscode-remote.remote-ssh
-        ms-toolsai.jupyter
-        ms-python.python
+        # ms-toolsai.jupyter
+        # ms-python.python
         bmewburn.vscode-intelephense-client
         eamodio.gitlens
         chenglou92.rescript-vscode
