@@ -27,6 +27,7 @@
     rhaiscript.vscode-rhai
     murloccra4ler.leap
     vscodevim.vim
+    golang.go
 
     # Java
     redhat.java
