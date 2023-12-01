@@ -46,7 +46,6 @@
     ## GUI Programs
     # vscodeWithExtensions
     # nil #dependency for vscode extension
-    postman
     charles
   ];
 

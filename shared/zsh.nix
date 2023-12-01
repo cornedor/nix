@@ -15,8 +15,9 @@
       save = 20000;
     };
     oh-my-zsh = {
-      enable = true;
+      enable = false;
       plugins = ["git" "copyfile" "jira"];
+
     };
     dirHashes = {
       nix = "$HOME/.config/nix";

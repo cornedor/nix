@@ -22,6 +22,16 @@
     },
     {
       "from": {
+        "id": "node-21-dev",
+        "type": "indirect"
+      },
+      "to": {
+        "path": "/Users/corne/.config/nix/flakes/node-21-dev",
+        "type": "path"
+      }
+    },
+    {
+      "from": {
         "id": "microvm",
         "type": "indirect"
       },
