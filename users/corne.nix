@@ -74,8 +74,13 @@
       # clang_16
       # hashlink
       # clang
-      gcc
-      opam
+      # gcc
+      # opam
+      ocamlPackages.ocaml-lsp
+      ocamlPackages.utop
+      ocamlPackages.odoc
+      ocamlPackages.ocamlformat
+      dune_3
       micromamba
       jdk17
       erlang_26
