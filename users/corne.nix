@@ -38,6 +38,7 @@
       thefuck
       dig
       fd
+      android-tools
 
       # Replace MacOS packages
       gnumake
