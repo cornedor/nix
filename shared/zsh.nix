@@ -7,6 +7,7 @@
     enable = true;
     enableCompletion = true;
     enableAutosuggestions = true;
+    autocd = true;
     syntaxHighlighting = {
       enable = true;
     };
@@ -16,8 +17,13 @@
     };
     oh-my-zsh = {
       enable = false;
-      plugins = ["git" "copyfile" "jira"];
-
+      # plugins = ["git" "copyfile" "jira"];
+    };
+    zplug = {
+      enable = true;
+      plugins = [
+        { name = "plugins/git"; tags = [ "from:oh-my-zsh" ]; }
+      ];
     };
     dirHashes = {
       nix = "$HOME/.config/nix";
