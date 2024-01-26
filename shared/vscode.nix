@@ -29,6 +29,7 @@
     vscodevim.vim
     golang.go
     ocamllabs.ocaml-platform
+    rjmacarthy.twinny
 
     chenglou92.rescript-vscode
     denoland.vscode-deno
