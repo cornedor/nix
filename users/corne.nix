@@ -58,7 +58,7 @@
       yarn
       nodePackages.eslint
       nodePackages.prettier
-      nodePackages.create-react-app
+      nodePackages.yalc
       deno
 
       ## PHP Development
