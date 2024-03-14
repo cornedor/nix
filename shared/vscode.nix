@@ -41,6 +41,7 @@
     bmewburn.vscode-intelephense-client
     eamodio.gitlens
     redhat.vscode-yaml
+    redhat.vscode-xml
     firefox-devtools.vscode-firefox-debug
     vscode-icons-team.vscode-icons
     editorconfig.editorconfig
