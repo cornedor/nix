@@ -30,6 +30,7 @@
     golang.go
     ocamllabs.ocaml-platform
     rjmacarthy.twinny
+    biati.ddev-manager
 
     chenglou92.rescript-vscode
     denoland.vscode-deno
