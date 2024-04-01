@@ -31,6 +31,8 @@
     ocamllabs.ocaml-platform
     rjmacarthy.twinny
     biati.ddev-manager
+    matthewpi.caddyfile-support
+    gleam.gleam
 
     chenglou92.rescript-vscode
     denoland.vscode-deno

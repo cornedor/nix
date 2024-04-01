@@ -89,6 +89,7 @@
       python311Packages.pip
       cargo
       rustc
+      gleam
 
       # Useful nix related tools
       nixpkgs-fmt
