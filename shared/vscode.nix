@@ -28,11 +28,16 @@
     murloccra4ler.leap
     vscodevim.vim
     golang.go
+    a-h.templ
     ocamllabs.ocaml-platform
     rjmacarthy.twinny
     biati.ddev-manager
     matthewpi.caddyfile-support
     gleam.gleam
+    otovo-oss.htmx-tags
+    mblode.twig-language-2
+    mblode.twig-language
+    vercel.turbo-vsc
 
     chenglou92.rescript-vscode
     denoland.vscode-deno
