@@ -43,8 +43,6 @@
       # Replace MacOS packages
       gnumake
 
-      # graalvm19-ce
-
       obsidian
 
       # Virtualisation
@@ -59,16 +57,18 @@
       nodePackages.eslint
       nodePackages.prettier
       nodePackages.yalc
+      turbo
       deno
 
       ## PHP Development
       mysql
-      php82Packages.composer
       php82
+      php82Packages.composer
       mkcert
       nss
       nssTools
       caddy
+
       # Other languages
       go
       haxe

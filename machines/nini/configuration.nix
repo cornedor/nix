@@ -7,7 +7,7 @@
   ...
 }: {
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -68,9 +68,11 @@
     xkbOptions = "caps:swapescape,lv3:ralt_switch";
     xkbVariant = "altgr-intl";
     videoDrivers = ["nvidia"];
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+    # displayManager.gdm.enable = true;
+    # desktopManager.gnome.enable = true;
+    displayManager.sddm.enable = true;
   };
+  services.desktopManager.plasma6.enable = true;
   hardware.nvidia.modesetting.enable = true;
 
   # Enable CUPS to print documents.

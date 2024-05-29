@@ -9,7 +9,7 @@
     coreutils
     curl
     wget
-    graalvm19-ce
+    graalvm-ce
     libreoffice
     google-chrome
     firefox

@@ -38,6 +38,7 @@
     mblode.twig-language-2
     mblode.twig-language
     vercel.turbo-vsc
+    nicoespeon.abracadabra
 
     chenglou92.rescript-vscode
     denoland.vscode-deno
