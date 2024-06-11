@@ -23,6 +23,7 @@
       enable = true;
       plugins = [
         { name = "plugins/git"; tags = [ "from:oh-my-zsh" ]; }
+        { name = "gnachman/iTerm2-shell-integration"; tags = ["use:shell_integration/zsh"]; }
       ];
     };
     dirHashes = {
@@ -44,6 +45,19 @@
 
   programs.fzf = {
     enable = true;
+  };
+
+  programs.atuin = {
+    enable = true;
+    flags = [ "--disable-up-arrow" ];
+    settings = {
+      ctrl_n_shortcuts = true;
+      enter_accept = true;
+      update_check = false;
+      sync = {
+        records = true;
+      };
+    };
   };
 
   # Direnv, load and unload environment variables depending on the current directory.

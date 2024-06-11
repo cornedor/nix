@@ -80,6 +80,7 @@
               # `home-manager` config
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
               home-manager.users.corne = import ./users/corne.nix;
               home-manager.extraSpecialArgs = {
                 # nixvim = nixvim;
