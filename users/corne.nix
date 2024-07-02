@@ -35,7 +35,6 @@
       yaml2json
       jq
       gnused
-      thefuck
       dig
       fd
       android-tools
@@ -120,6 +119,10 @@
       vlc
       prismlauncher
     ];
+
+  programs = {
+    yazi.enable = true;
+  };
 
   home.sessionPath = ["$HOME/.local/bin"];
 

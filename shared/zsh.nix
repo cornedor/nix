@@ -60,6 +60,10 @@
     };
   };
 
+  programs.thefuck = {
+    enable = true;
+  };
+
   # Direnv, load and unload environment variables depending on the current directory.
   # https://direnv.net
   programs.direnv = {

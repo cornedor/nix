@@ -39,6 +39,7 @@
     mblode.twig-language
     vercel.turbo-vsc
     nicoespeon.abracadabra
+    supermaven.supermaven
 
     chenglou92.rescript-vscode
     denoland.vscode-deno
