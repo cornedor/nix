@@ -124,6 +124,8 @@
     ibm-plex
     nerdfonts
 
+    kdePackages.kdbusaddons
+
     # Virtualisation
     virt-manager
     podman-compose
