@@ -22,6 +22,7 @@
       curl
       wget
       htop
+      gnutar
       ripgrep
       neovim
       tmux
