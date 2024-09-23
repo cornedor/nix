@@ -23,6 +23,7 @@
       wget
       htop
       gnutar
+      xz
       ripgrep
       neovim
       tmux
@@ -39,6 +40,7 @@
       dig
       fd
       android-tools
+      openvpn
 
       # Replace MacOS packages
       gnumake
@@ -54,7 +56,6 @@
       bun
       # nodejs-12_x
       yarn
-      nodePackages.eslint
       nodePackages.prettier
       nodePackages.yalc
       turbo
@@ -62,8 +63,8 @@
 
       ## PHP Development
       mysql
-      php82
-      php82Packages.composer
+      php83
+      php83Packages.composer
       mkcert
       nss
       nssTools
@@ -119,6 +120,7 @@
       blender
       vlc
       prismlauncher
+      usbutils
     ];
 
   programs = {
