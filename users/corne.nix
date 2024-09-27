@@ -41,6 +41,7 @@
       fd
       android-tools
       openvpn
+      git-absorb
 
       # Replace MacOS packages
       gnumake
