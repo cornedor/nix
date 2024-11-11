@@ -59,11 +59,11 @@
       yarn
       nodePackages.prettier
       nodePackages.yalc
-      turbo
+      # turbo
       deno
 
       ## PHP Development
-      mysql
+      mariadb
       php83
       php83Packages.composer
       mkcert
@@ -73,7 +73,7 @@
 
       # Other languages
       go
-      haxe
+      # haxe
       # clang_16
       # hashlink
       # clang
