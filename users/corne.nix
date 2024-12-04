@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   home.stateVersion = "23.11";
@@ -96,6 +97,8 @@
       # Useful nix related tools
       nixpkgs-fmt
       nil
+      devenv
+      inputs.rooter.packages.${pkgs.system}.rooter
       # cachix # adding/managing alternative binary caches hosted by Cachix
       nodePackages.node2nix
       nodePackages.typescript-language-server
@@ -131,8 +134,12 @@
   home.sessionPath = ["$HOME/.local/bin"];
 
   # Alias
-  home.shellAliases.gitappend = "git commit --amend --no-edit && git push --force-with-lease";
-  home.shellAliases.vim = "nvim";
+  home.shellAliases = {
+    gitappend = "git commit --amend --no-edit && git push --force-with-lease";
+    vim = "nvim";
+    newadmin = "bin/magento admin:user:create --admin-user=corne --admin-password=admin123 --admin-email='admin@example.org' --admin-firstname=Corné --admin-lastname=Dorrestijn";
+  };
+
 
   # manual.manpages.enable = false;
 

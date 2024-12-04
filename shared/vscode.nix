@@ -40,6 +40,7 @@
     vercel.turbo-vsc
     nicoespeon.abracadabra
     supermaven.supermaven
+    snyk-security.snyk-vulnerability-scanner
 
     chenglou92.rescript-vscode
     denoland.vscode-deno
@@ -58,6 +59,9 @@
     mikestead.dotenv
     arrterian.nix-env-selector
     denoland.vscode-deno
+
+    # Magento
+    viperet.vscode-magento-wizard
     
     # Java
     redhat.java

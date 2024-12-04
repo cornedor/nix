@@ -19,6 +19,9 @@
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
+
+    rooter.url = "github:run-as-root/rooter";
+    rooter.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -29,6 +32,7 @@
     home-manager,
     nix-vscode-extensions,
     comma,
+    rooter,
     ...
   } @ inputs: let
     inherit (darwin.lib) darwinSystem;
@@ -83,6 +87,7 @@
               home-manager.backupFileExtension = "backup";
               home-manager.users.corne = import ./users/corne.nix;
               home-manager.extraSpecialArgs = {
+                inherit inputs;
                 # nixvim = nixvim;
               };
             }
@@ -95,6 +100,7 @@
         system = "x86_64-linux";
         specialArgs = {
           # nixvim = nixvim;
+          inherit inputs;
         };
         modules = [
           ./machines/nini/configuration.nix
@@ -103,6 +109,7 @@
             nixpkgs = nixpkgsConfig;
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.corne = import ./users/corne.nix;
             home-manager.users.janike = import ./users/janike.nix;
           }
