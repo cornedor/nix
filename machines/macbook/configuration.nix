@@ -3,6 +3,7 @@
   lib,
   ...
 }: {
+  nix.enable = true;
   nix.settings.substituters = [
     "https://cache.nixos.org/"
   ];
@@ -12,7 +13,6 @@
   nix.settings.trusted-users = [
     "@admin"
   ];
-  nix.configureBuildUsers = true;
   ids.gids.nixbld = 30000;
   system.stateVersion = 5;
   nix.settings.sandbox = true;
@@ -24,7 +24,6 @@
   };
 
   nix.gc = {
-    user = "root";
     automatic = true;
     interval = { Weekday = 0; Hour = 2; Minute = 0; };
     options = "--delete-older-than 30d";
@@ -44,9 +43,6 @@
   # Create /etc/bashrc that loads the nix-darwin environment.
   # ZSH is enabled in home
   programs.zsh.enable = true;
-
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
 
   # Apps
   # `home-manager` currently has issues adding them to `~/Applications`

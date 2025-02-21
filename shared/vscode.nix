@@ -19,7 +19,7 @@
     mxsdev.typescript-explorer
     bradlc.vscode-tailwindcss
     stivo.tailwind-fold
-    astro-build.astro-vscode
+    # astro-build.astro-vscode
     oven.bun-vscode
     formulahendry.auto-rename-tag
     # ziglang.vscode-zig
@@ -28,9 +28,9 @@
     murloccra4ler.leap
     vscodevim.vim
     golang.go
-    a-h.templ
+    # a-h.templ
     ocamllabs.ocaml-platform
-    rjmacarthy.twinny
+    # rjmacarthy.twinny
     biati.ddev-manager
     matthewpi.caddyfile-support
     gleam.gleam
@@ -40,7 +40,6 @@
     vercel.turbo-vsc
     nicoespeon.abracadabra
     supermaven.supermaven
-    snyk-security.snyk-vulnerability-scanner
 
     chenglou92.rescript-vscode
     denoland.vscode-deno
@@ -59,6 +58,8 @@
     mikestead.dotenv
     arrterian.nix-env-selector
     denoland.vscode-deno
+
+    saoudrizwan.claude-dev
 
     # Magento
     viperet.vscode-magento-wizard

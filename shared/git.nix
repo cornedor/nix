@@ -28,28 +28,10 @@
 
     includes = [
       {
-        condition = "gitdir:~/Development";
+        condition = "hasconfig:remote.*.url:git@git.emico.io:*/**";
         contents = {
           user = {
             email = "cdorrestijn@emico.nl";
-            name = "Corné Dorrestijn";
-          };
-        };
-      }
-      {
-        condition = "gitdir:~/Branches";
-        contents = {
-          user = {
-            email = "cdorrestijn@emico.nl";
-            name = "Corné Dorrestijn";
-          };
-        };
-      }
-      {
-        condition = "gitdir:~/Personal";
-        contents = {
-          user = {
-            email = "contact@corne.info";
             name = "Corné Dorrestijn";
           };
         };

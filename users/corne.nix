@@ -43,6 +43,9 @@
       android-tools
       openvpn
       git-absorb
+      uv
+      podman
+      minikube
 
       # Replace MacOS packages
       gnumake
