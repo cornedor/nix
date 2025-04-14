@@ -68,8 +68,8 @@
 
       ## PHP Development
       mariadb
-      php83
-      php83Packages.composer
+      # php84
+      # php84Packages.composer
       mkcert
       nss
       nssTools
@@ -90,12 +90,12 @@
       dune_3
       micromamba
       jdk17
-      erlang_26
-      python311
-      python311Packages.pip
+      # erlang_26
+      python3
+      python3Packages.pip
       cargo
       rustc
-      gleam
+      # gleam
 
       # Useful nix related tools
       nixpkgs-fmt
@@ -103,9 +103,9 @@
       devenv
       inputs.rooter.packages.${pkgs.system}.rooter
       # cachix # adding/managing alternative binary caches hosted by Cachix
-      nodePackages.node2nix
-      nodePackages.typescript-language-server
-      vscode-langservers-extracted
+  #     nodePackages.node2nix
+  #     nodePackages.typescript-language-server
+  #     vscode-langservers-extracted
       comma
     ]
     ++ lib.optionals stdenv.isDarwin [

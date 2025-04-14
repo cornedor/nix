@@ -1,6 +1,15 @@
 {
   description = "Corné's darwin system";
 
+  nixConfig ={
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
+
   inputs = {
     # Package sets
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -14,8 +23,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Other sources
-    comma.url = "github:nix-community/comma";
-    comma.inputs.nixpkgs.follows = "nixpkgs";
+    # comma.url = "github:nix-community/comma";
+    # comma.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
@@ -31,7 +40,7 @@
     stablepkgs,
     home-manager,
     nix-vscode-extensions,
-    comma,
+    # comma,
     rooter,
     ...
   } @ inputs: let
@@ -45,7 +54,7 @@
         attrValues self.overlays
         ++ [
           nix-vscode-extensions.overlays.default
-          comma.overlays.default
+          # comma.overlays.default
         ]
         ++ singleton (
           # Sub in x86 version of packages that don't build on Apple Silicon yet
