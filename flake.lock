@@ -103,7 +103,8 @@
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs",
         "rooter": "rooter",
-        "stablepkgs": "stablepkgs"
+        "stablepkgs": "stablepkgs",
+        "yolopkgs": "yolopkgs"
       }
     },
     "rooter": {
@@ -188,6 +189,22 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "yolopkgs": {
+      "locked": {
+        "lastModified": 1745085883,
+        "narHash": "sha256-hZEOnUXgXK+zFzw5Kn8Oa+gVh555X1F8+zH5M0Sv8T4=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "a22ade53edde00907382ffe89a796b71b592a7dd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "master",
+        "repo": "nixpkgs",
         "type": "github"
       }
     }

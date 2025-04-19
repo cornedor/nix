@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  yolopkgs,
   lib,
   inputs,
   ...
@@ -68,8 +69,8 @@
 
       ## PHP Development
       mariadb
-      # php84
-      # php84Packages.composer
+      yolopkgs.php84
+      yolopkgs.php84Packages.composer
       mkcert
       nss
       nssTools

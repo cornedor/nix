@@ -14,6 +14,7 @@
     # Package sets
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     stablepkgs.url = "github:nixos/nixpkgs/nixpkgs-24.11-darwin";
+    yolopkgs.url = "github:nixos/nixpkgs/master";
 
     # Environment/system management
     darwin.url = "github:lnl7/nix-darwin/master";
@@ -76,8 +77,8 @@
     # My `nix-darwin` configs
 
     darwinConfigurations = {
-      corne = darwinSystem {
-        system = "aarch64-darwin";
+      corne = let system = "aarch64-darwin"; in darwinSystem {
+        system = system;
         specialArgs = {
           inherit inputs;
         };
@@ -98,6 +99,7 @@
               home-manager.extraSpecialArgs = {
                 inherit inputs;
                 # nixvim = nixvim;
+                yolopkgs = inputs.yolopkgs.legacyPackages.${system};
               };
             }
           ];
@@ -105,8 +107,8 @@
     };
 
     nixosConfigurations = {
-      nini = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+      nini = let system = "x86_64-linux"; in nixpkgs.lib.nixosSystem {
+        system = system;
         specialArgs = {
           # nixvim = nixvim;
           inherit inputs;
@@ -118,7 +120,11 @@
             nixpkgs = nixpkgsConfig;
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              # nixvim = nixvim;
+              yolopkgs = inputs.yolopkgs.legacyPackages.${system};
+            };
             home-manager.users.corne = import ./users/corne.nix;
             home-manager.users.janike = import ./users/janike.nix;
           }
