@@ -7,7 +7,6 @@
   ...
 }: {
   nix = {
-    package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -74,6 +73,7 @@
   };
   services.desktopManager.plasma6.enable = true;
   hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.open = false;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -83,8 +83,8 @@
   ];
 
   # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  # sound.enable = true;
+  # hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -116,13 +116,13 @@
     inotify-tools
 
     ## Gnome/theming
-    gnome.gnome-tweaks
-    gnome.gnome-shell-extensions
-    gnomeExtensions.user-themes
-    gnomeExtensions.removable-drive-menu
-    arc-theme
-    ibm-plex
-    nerdfonts
+    # gnome.gnome-tweaks
+    # gnome.gnome-shell-extensions
+    # gnomeExtensions.user-themes
+    # gnomeExtensions.removable-drive-menu
+    # arc-theme
+    # ibm-plex
+    # nerdfonts
 
     kdePackages.kdbusaddons
 
@@ -138,12 +138,12 @@
   programs.zsh.enable = true;
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
 
-  fonts.fonts = with pkgs; [
-    ibm-plex
-    (nerdfonts.override {
-      fonts = ["FiraCode"];
-    })
-  ];
+  # fonts.fonts = with pkgs; [
+  #   ibm-plex
+  #   (nerdfonts.override {
+  #     fonts = ["FiraCode"];
+  #   })
+  # ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

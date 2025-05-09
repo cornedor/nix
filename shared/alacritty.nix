@@ -1,6 +1,6 @@
 { ... }: {
-  home.file."/.config/alacritty/catppuccin-latte.theme.yml".source =
-    ./dotfiles/alacritty/catppuccin-latte.theme.yml;
+  home.file."/.config/alacritty/rose-pine-dawn.theme.toml".source =
+    ./dotfiles/alacritty/rose-pine-dawn.theme.toml;
   programs.alacritty = {
     enable = true;
     settings = {
@@ -8,12 +8,15 @@
         normal.family = "FiraCode Nerd Font";
         size = 12;
       };
-      import = ["~/.config/alacritty/catppuccin-latte.theme.yml"];
+      general = {
+        import = ["~/.config/alacritty/rose-pine-dawn.theme.toml"];
+      };
       env = {
         TERM = "xterm-256color";
       };
       window = {
         padding = { x = 5; y = 5; };
+        decorations = "None";
       };
     };
   };

@@ -13,7 +13,7 @@
     ../shared/git.nix
     ../shared/zsh.nix
     ../shared/htop.nix
-    # ../shared/alacritty.nix
+    ../shared/alacritty.nix
   ];
 
   home.packages = with pkgs;
@@ -24,6 +24,7 @@
       curl
       wget
       htop
+      btop
       gnutar
       xz
       ripgrep
@@ -100,8 +101,10 @@
 
       # Useful nix related tools
       nixpkgs-fmt
+      nixd
       nil
       devenv
+      nixfmt
       inputs.rooter.packages.${pkgs.system}.rooter
       # cachix # adding/managing alternative binary caches hosted by Cachix
   #     nodePackages.node2nix

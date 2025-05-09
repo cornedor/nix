@@ -63,6 +63,10 @@
   #    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   #  ];
 
+  imports = [
+    ../../shared/desktop.nix
+  ];
+
   # Keyboard
   system.keyboard = {
     enableKeyMapping = true;
@@ -93,6 +97,8 @@
       ApplePressAndHoldEnabled = false;
       AppleShowAllExtensions = true;
       AppleKeyboardUIMode = 3; # Navigate trough all UI elements using keyboard
+      NSWindowShouldDragOnGesture = true; # Drag windows anywhere usingcmd+ctrl
+      NSAutomaticWindowAnimationsEnabled = true;
     };
   };
 
